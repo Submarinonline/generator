@@ -1,0 +1,8 @@
+{
+    "name": "@submarin/generator",
+    "version": "1.0.0",
+    "author": "YamaD <yamad@submarin.online>",
+    "license": "MIT",
+    "main": "index.js",
+    "repository": "git@github.com:Submarinonline/generator"
+}
