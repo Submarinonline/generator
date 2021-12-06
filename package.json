@@ -1,6 +1,6 @@
 {
   "name": "@submarin/generator",
-  "version": "2.0.0-beta0",
+  "version": "2.0.0-beta1",
   "author": "YamaD",
   "dependencies": {
     "typescript": "^4.5.2"

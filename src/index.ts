@@ -1,4 +1,4 @@
-const strData = class {
+export const strData = class {
   constructor({ text = "", replaced = [] }) {
     this.text = typeof text !== "string" ? "" : text
     this.replaced = Array.isArray(replaced) ? replaced : []
@@ -7,7 +7,7 @@ const strData = class {
   replaced
 }
 
-const replace = (data: any, dict: any = {}) => {
+export const replace = (data: any, dict: any = {}) => {
   if (!data.text) return new strData(data)
   for (const orig in dict) {
     const translateStr = []
@@ -58,9 +58,4 @@ const replace = (data: any, dict: any = {}) => {
   }
 
   return new strData(data)
-}
-
-export default {
-  strData,
-  replace,
 }
