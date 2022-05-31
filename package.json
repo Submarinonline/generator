@@ -1,19 +1,22 @@
 {
   "name": "@submarin/generator",
-  "version": "2.0.0-beta1",
-  "author": "YamaD",
-  "dependencies": {
-    "typescript": "^4.5.2"
+  "version": "2.0.0-beta2",
+  "author": "YamaD <dev@dyama.net>",
+  "devDependencies": {
+    "esbuild": "0.14.42",
+    "typescript": "4.7.2"
   },
   "files": [
-    "dist/"
+    "dist"
   ],
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "git@github.com:Submarinonline/generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:Submarinonline/generator.git"
+  },
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "build": "tsc && esbuild index.ts --bundle --minify --outdir=dist"
   },
   "type": "module",
   "types": "dist/index.d.ts"
