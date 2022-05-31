@@ -22,7 +22,7 @@ export const replace = (origData: TextData, dict: Dict): TextData => {
     let cursor = extra[0].length
     let processed = false
 
-    const replaced = match.map(str => {
+    const replaced = match.map((str, i) => {
       const cursorEnd = cursor + str.length - 1
 
       // 以前に置換した範囲と被ってるかどうか
@@ -33,7 +33,7 @@ export const replace = (origData: TextData, dict: Dict): TextData => {
             (hist.begin <= cursorEnd && cursorEnd <= hist.end)
         )
       ) {
-        cursor += str.length
+        cursor += str.length + extra[i + 1].length
         return str
       } else {
         // 変換前後で文字列長が等しいかどうか
@@ -49,7 +49,7 @@ export const replace = (origData: TextData, dict: Dict): TextData => {
           )
           data.replaced.push({ begin: cursor, end: cursorEnd + diff })
         }
-        cursor += word.replace.length
+        cursor += word.replace.length + extra[i + 1].length
         processed = true
         return word.replace
       }
