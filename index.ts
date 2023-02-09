@@ -68,10 +68,13 @@ export const replace = (origData: TextData, dict: Dict): TextData => {
 
 export const json2Dict = (obj: { [key: string]: string }): Dict => {
   const dict: Dict = []
-  for (const key in obj)
-    dict.push({
-      match: new RegExp(key, "g"),
-      replace: obj[key],
-    })
+  for (const key in obj) {
+    try {
+      dict.push({
+        match: new RegExp(key, "g"),
+        replace: obj[key],
+      })
+    } catch {}
+  }
   return dict
 }
