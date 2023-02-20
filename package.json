@@ -1,14 +1,14 @@
 {
   "name": "@submarin/generator",
   "description": "汎用文章ジェネレーター",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "author": "YamaD <dev@dyama.net>",
   "bugs": {
     "url": "https://github.com/Submarinonline/generator/issues"
   },
   "devDependencies": {
-    "esbuild": "0.15.15",
-    "typescript": "4.9.3"
+    "esbuild": "0.17.10",
+    "typescript": "4.9.5"
   },
   "files": [
     "dist"
@@ -20,7 +20,7 @@
     "url": "https://github.com:Submarinonline/generator.git"
   },
   "scripts": {
-    "build": "tsc && esbuild index.ts --bundle --minify --outdir=dist --format=esm",
+    "build": "tsc && esbuild index.ts --bundle --minify --sourcemap --outdir=dist --format=esm",
     "prepublishOnly": "npm run build"
   },
   "type": "module",
